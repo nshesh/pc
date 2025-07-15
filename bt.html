@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC ZONE - Battle Royale Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-red: #ff0066;
+      --neon-blue: #00ffff;
+      --neon-green: #00ff88;
+      --dark-bg: #0d0d0d;
+      --card-bg: rgba(20, 20, 40, 0.85);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--dark-bg);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0 1rem;
+    }
+
+    .logo {
+      font-size: 3rem;
+      color: var(--neon-red);
+      text-shadow: 0 0 15px var(--neon-red);
+    }
+
+    .search-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 13, 13, 0.95);
+      padding: 1rem;
+      border-bottom: 1px solid var(--neon-blue);
+    }
+
+    .search-container {
+      max-width: 600px;
+      margin: auto;
+      position: relative;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 12px 20px 12px 40px;
+      border-radius: 30px;
+      border: none;
+      background: rgba(40, 40, 60, 0.9);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-container::before {
+      content: '🔍';
+      position: absolute;
+      left: 15px;
+      top: 10px;
+    }
+
+    .featured {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .featured h2 {
+      font-size: 2rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue);
+    }
+
+    .featured-games {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .game-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      width: 280px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+      position: relative;
+    }
+
+    .game-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    }
+
+    .game-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .game-info {
+      padding: 1rem;
+    }
+
+    .game-title {
+      font-size: 1.2rem;
+      color: var(--neon-green);
+    }
+
+    .game-desc {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: linear-gradient(to right, var(--neon-blue), var(--neon-green));
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .rating-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--neon-blue);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      box-shadow: 0 0 10px var(--neon-blue);
+    }
+
+    footer {
+      text-align: center;
+      color: #aaa;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+	.top-links {
+  text-align: center;
+  background: #111;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--neon-blue);
+}
+
+.top-links a {
+  margin: 0 15px;
+  color: var(--neon-blue);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.top-links a:hover {
+  color: var(--neon-green);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo">PC ZONE</h1>
+  </header>
+
+  <div class="search-bar">
+    <div class="search-container">
+      <input type="text" id="gameSearch" placeholder="Search games..." onkeyup="filterGames()">
+    </div>
+  </div>
+<nav class="top-links">
+  <a href="index.html">🏠 Home</a>
+  <a href="pg.html">🔥 Popular Games</a>
+  <a href="ag.html">🎮 All Games</a>
+  <a href="bt.html">⚔ Battle Royale</a>
+  <a href="c.html">📞 Contact</a>
+</nav>
+
+  <section class="featured">
+    <h2>Top Battle Royale Games</h2>
+    <div class="featured-games" id="gameList">
+      <!-- Add 8 game cards here -->
+      <!-- Same as before, just copy and update titles/images/links -->
+      <!-- Example below -->
+      <div class="game-card">
+        <span class="rating-badge">⭐ 4.8</span>
+        <img src="fff.jpg" alt="Free Fire" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title">Free Fire</h3>
+          <p class="game-desc">A fast-paced battle royale game designed for mobile with quick 10-minute matches.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.dts.freefiremax" class="download-btn">Download</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <span class="rating-badge">⭐ 4.7</span>
+        <img src="pbg.jpg" alt="PUBG Mobile" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title">PUBG Mobile</h3>
+          <p class="game-desc">A global sensation where 100 players fight to be the last one standing.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.tencent.ig" class="download-btn">Download</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <span class="rating-badge">⭐ 4.6</span>
+        <img src="cod.jpg" alt="Call of Duty Mobile" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title">COD Mobile</h3>
+          <p class="game-desc">Experience Call of Duty multiplayer and battle royale modes with console-quality graphics.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter" class="download-btn">Download</a>
+        </div>
+      </div>
+	  
+	  <div class="game-card">
+        <span class="rating-badge">⭐ 4.6</span>
+        <img src="al.jpg" alt="Call of Duty Mobile" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title">Apex Legends Mobile
+</h3>
+          <p class="game-desc">Bio: The mobile edition of the popular hero shooter developed by Respawn/EA, relaunched in 2025. Offers character-based squad battle royale with unique abilities and tactical gameplay. 
+Android Authority
++13
+Gameflig
++13
+The Gamer
++13</p>
+          <a href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter" class="download-btn">Download</a>
+        </div>
+      </div>
+	  
+	  <div class="game-card">
+        <span class="rating-badge">⭐ 4.6</span>
+        <img src="84.jpg" alt="Call of Duty Mobile" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title"> Farlight 84
+ </h3>
+          <p class="game-desc">Developed by Lilith Games, this futuristic BR includes jetpacks, heroes with special abilities, sci-fi vehicles, and fast-paced matches in vivid arenas. Great visuals optimized for mid-range phones. 
+9meters
++2
+Gameflig
++2
+Vercetti Gaming
++2</p>
+          <a href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter" class="download-btn">Download</a>
+        </div>
+      </div>
+	  
+	  <div class="game-card">
+        <span class="rating-badge">⭐ 4.6</span>
+        <img src="br.jpg" alt="Call of Duty Mobile" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title">Battlelands Royale </h3>
+          <p class="game-desc">Bio: A top-down, arcade-style BR by Futureplay Games. Popular for quick 3‑5 minute matches, colorful visuals, and easy pick-up gameplay. Perfect for casual players. 
+AppSpy
++5
+Gameflig
++5
+Mobile Marketing Reads
++5</p>
+          <a href="https://play.google.com/store/apps/details?id=com.futureplay.battlelandsroyale" class="download-btn">Download</a>
+        </div>
+      </div>
+	  
+	  <div class="game-card">
+        <span class="rating-badge">⭐ 4.6</span>
+        <img src="sf.jpg" alt="Call of Duty Mobile" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title">ScarFall: The Royale Combat
+
+
+</h3>
+          <p class="game-desc">Bio: India’s homegrown battle royale by XSQUADS Tech. Supporting both online and offline modes—optimized for low-data/budget smartphones. Includes compact maps and clan features. Over 10 million downloads as of early 2022. 
+Wikipedia
++15
+Wikipedia
++15
+gamesradar.com
++15</p>
+          <a href="https://play.google.com/store/apps/details?id=com.xsquads.scarfall" class="download-btn">Download</a>
+        </div>
+      </div>
+	  
+	  <div class="game-card">
+        <span class="rating-badge">⭐ 4.6</span>
+        <img src="pg3.jpg" alt="Call of Duty Mobile" class="game-img" />
+        <div class="game-info">
+          <h3 class="game-title">Pixel Gun 3D: Battle Royale
+
+
+ </h3>
+          <p class="game-desc">Bio: A voxel‑style shooter from Cubic Games blending Minecraft‑like visuals with BR gameplay. Matches include fewer players, but high action and weapon diversity make it stand out. Over 100 million downloads globally. 
+Gameflig
++1
+Wikipedia
++1</p>
+          <a href="https://play.google.com/store/apps/details?id=com.pixel.gun3d" class="download-btn">Download</a>
+        </div>
+      </div>
+	  
+	  
+      <!-- Add more game cards below (4th to 8th) -->
+      <!-- Replace placeholders with real game info/images -->
+    </div>
+  </section>
+
+  <footer>
+    © 2025 PC ZONE. All Rights Reserved.
+  </footer>
+
+  <script>
+    function filterGames() {
+      const input = document.getElementById('gameSearch');
+      const filter = input.value.toLowerCase();
+      const cards = document.getElementById('gameList').getElementsByClassName('game-card');
+
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector(".game-title").innerText.toLowerCase();
+        if (title.includes(filter)) {
+          cards[i].style.display = "block";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
